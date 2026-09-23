@@ -18,11 +18,11 @@ const AnnouncementBar = () => {
           </div>
         </div>
         <div className="flex flex-row gap-5 items-center">
-          <span className="text-muted-foreground italic">
+          <span className="text-muted italic">
             संज्ञाना : संस्था ज्ञान नेतृत्वको सेवामा
           </span>
-          <FaFacebookF className="text-muted-foreground hover:text-secondary cursor-pointer" />
-          <FaLinkedinIn className="text-muted-foreground hover:text-secondary  cursor-pointer" />
+          <FaFacebookF className="text-muted hover:text-secondary cursor-pointer" />
+          <FaLinkedinIn className="text-muted hover:text-secondary  cursor-pointer" />
         </div>
       </div>
     </div>

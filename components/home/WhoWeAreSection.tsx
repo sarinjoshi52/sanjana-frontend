@@ -12,8 +12,9 @@ type WhoWeAreProps = {
 const WhoWeAreSection = ({ className }: WhoWeAreProps) => {
   return (
     <section
+      id="who-are-we"
       className={cn(
-        "rounded-xl border border-muted shadow-md p-8 flex flex-row items-center gap-5 bg-white",
+        "scroll-mt-[135px] rounded-xl border border-muted shadow-md p-8 flex flex-row items-center gap-5 bg-white",
         className
       )}
     >

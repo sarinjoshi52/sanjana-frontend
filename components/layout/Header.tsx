@@ -1,11 +1,5 @@
 "use client";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "../ui/navigation-menu";
 import { usePathname } from "next/navigation";
 
 const menuItems = [
@@ -14,7 +8,7 @@ const menuItems = [
     href: "/",
   },
   {
-    name: "Knowledge",
+    name: "Knowledge Service",
     href: "/knowledge",
   },
   {
@@ -54,37 +48,33 @@ const Header = () => {
           </span>
         </div>
       </div>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem className="flex h-full flex-row items-center gap-5">
-            {menuItems.map((item, index) => {
-              const isActive = pathname === item.href;
+      <nav aria-label="Main navigation" className="flex items-center">
+        <ul className="flex flex-row items-center gap-5">
+          {menuItems.map((item) => {
+            const isActive = pathname === item.href;
 
-              return (
-                <NavigationMenuLink
-                  key={item.name}
-                  render={() => (
-                    <Link
-                      className={` relative text-black text-center text-sm font-medium w-full whitespace-nowrap transition-colors duration-200 hover:text-primary-foreground ${
-                        isActive ? "text-primary-foreground" : ""
-                      }`}
-                      href={item.href}
-                    >
-                      {item.name}
-
-                      <span
-                        className={`absolute -bottom-2 left-0 right-0 h-[3px] bg-primary-foreground w-full transition-opacity ease-in duration-100 ${
-                          isActive ? "opacity-100" : "opacity-0 "
-                        }`}
-                      />
-                    </Link>
-                  )}
-                />
-              );
-            })}
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+            return (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`relative block text-center text-sm font-semibold whitespace-nowrap transition-colors duration-200 hover:text-primary-foreground ${
+                    isActive ? "text-primary-foreground" : "text-black"
+                  }`}
+                >
+                  {item.name}
+                  <span
+                    aria-hidden="true"
+                    className={`absolute -bottom-2 left-0 right-0 h-[3px] bg-primary-foreground transition-opacity ease-in duration-100 ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </div>
   );
 };

@@ -17,7 +17,7 @@ const list = [
 
 const OverviewSection = ({ className }: OverviewProps) => {
   return (
-    <section className={cn("flex flex-row items-center", className)}>
+    <section id="overview" className={cn("scroll-mt-[135px] flex flex-row items-center", className)}>
       <div className="w-[50%] flex flex-col items-start gap-5">
         <Heading title="SañJñāNā Overview" />
         <ul className="pl-2 flex flex-col gap-5">

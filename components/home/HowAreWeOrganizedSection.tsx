@@ -4,7 +4,12 @@ import Heading from "./Heading";
 import { FaDiagramProject, FaChartLine } from "react-icons/fa6";
 import { FaDatabase } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
-import { CustomCard, CustomCardIcon, CustomCardTitle } from "../CustomCard";
+import {
+  CustomCard,
+  CustomCardDescription,
+  CustomCardIcon,
+  CustomCardTitle,
+} from "../CustomCard";
 
 const cardContent = [
   {
@@ -25,9 +30,39 @@ const cardContent = [
   },
 ];
 
+const serviceCardContent = [
+  {
+    title: "Result Focus",
+    description:
+      "Producing outcome and creating sustainable developmental impact.",
+  },
+  {
+    title: "Excellence",
+    description:
+      "Pursuing and advocating high-quality standards in all outputs.",
+  },
+  {
+    title: "Client Satisfaction",
+    description: "Delivering responsive, desired, and deserving services.",
+  },
+  {
+    title: "Change Orientation",
+    description: "Preparing and innovating solutions for evolving challenges.",
+  },
+  {
+    title: "Values Driven",
+    description: "Promoting and practicing core developmental values.",
+  },
+  {
+    title: "Sustainable Capability",
+    description:
+      "Developing individual and organizational capability sustainably.",
+  },
+];
+
 const HowAreWeOrganizedSection = () => {
   return (
-    <section className="flex flex-col gap-5">
+    <section id="how-are-we-organized" className="scroll-mt-[135px] flex flex-col gap-5">
       <Heading title="How are we organized?" />
       <p className="text-muted-foreground w-[65%] text-sm pl-3">
         A Board of Directors governs the institution, setting strategic
@@ -37,7 +72,7 @@ const HowAreWeOrganizedSection = () => {
 
       <div className="flex flex-row gap-5 items-center">
         {cardContent.map((card, index) => (
-          <CustomCard key={index} className="rounded-lg py-5 w-1/4">
+          <CustomCard key={index} className="rounded-lg py-5 shadow-none w-1/4">
             <CustomCardIcon className="flex justify-center text-3xl text-primary-foreground">
               {card.icon}
             </CustomCardIcon>
@@ -46,6 +81,32 @@ const HowAreWeOrganizedSection = () => {
             </CustomCardTitle>
           </CustomCard>
         ))}
+      </div>
+
+      <div id="principles-approaches" className="scroll-mt-[135px] bg-[#0E172A] px-10 py-15 mt-7 rounded-xl flex flex-col gap-5">
+        <div className="flex flex-col gap-2 items-start">
+          <h3 className="font-bold text-secondary text-xl">
+            Service Priciple & Approaches
+          </h3>
+          <p className="text-[#94A3B8] text-xs">
+            Guiding our commitment to high-quality knowledge services
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-5">
+          {serviceCardContent.map((item, index) => (
+            <CustomCard
+              key={index}
+              className="bg-[#1E293B] w-[31%] flex flex-col gap-2 border-none px-5 rounded-lg"
+            >
+              <CustomCardTitle className="text-primary-foreground">
+                {item.title}
+              </CustomCardTitle>
+              <CustomCardDescription className="text-muted">
+                {item.description}
+              </CustomCardDescription>
+            </CustomCard>
+          ))}
+        </div>
       </div>
     </section>
   );

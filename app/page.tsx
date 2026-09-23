@@ -1,10 +1,11 @@
 import HowAreWeOrganizedSection from "@/components/home/HowAreWeOrganizedSection";
+import OurResourceSection from "@/components/home/OurResourceSection";
 import OverviewSection from "@/components/home/OverviewSection";
 import WhoWeAreSection from "@/components/home/WhoWeAreSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col px-30 gap-15">
+    <main data-aos="fade-in" className="flex flex-col px-30 gap-15">
       {/* hero banner */}
       <div className="bg-linear-to-r from-primary to-[#17405B] px-10 py-13 rounded-xl grid grid-cols-[70%_30%]">
         <div className="flex flex-col items-start gap-5">
@@ -24,6 +25,7 @@ export default function Home() {
       <OverviewSection className="w-full" />
       <WhoWeAreSection />
       <HowAreWeOrganizedSection />
-    </div>
+      <OurResourceSection />
+    </main>
   );
 }
