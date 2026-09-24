@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="bg-primary px-30 py-10 flex flex-row ">
-      <div className="flex flex-row flex-1">
+    <footer className="bg-primary px-10 lg:px-30 py-10 flex flex-col gap-5 lg:gap-0 lg:flex-row ">
+      <div className="flex flex-col gap-5 lg:flex-row lg:gap-0 flex-1">
         <div className="flex flex-col items-start gap-2">
           <h3 className="font-bold text-white text-xs">
             SañJñāNā Development Pvt. Ltd.
           </h3>
-          <p className="text-[#94A3B8] text-xs w-2/3">
+          <p className="text-[#94A3B8] text-xs lg:w-2/3">
             Strengthening institutions, knowledge, and leadership through
             evidence-based knowledge services.
           </p>

@@ -20,7 +20,7 @@ export default function KnowledgeBank() {
   return (
     <main
       data-aos="fade-in"
-      className="min-h-[450px] px-30 flex flex-col gap-5"
+      className="min-h-[450px] px-5 lg:px-30 flex flex-col gap-5"
     >
       <h1 className="font-bold text-3xl tracking-tight">
         Knowledge Bank & Archives
@@ -31,11 +31,11 @@ export default function KnowledgeBank() {
           featuring industry information, research data sets, manuals, and
           archived network publications.
         </p>
-        <div className="flex flex-wrap justify-center gap-5 items-center">
+        <div className="flex flex-col lg:flex-wrap justify-center gap-5 items-center">
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex bg-[#F9FAFC] items-center gap-2 w-[30%] rounded-md border border-muted p-5"
+              className="flex bg-[#F9FAFC] items-center gap-2 w-full lg:w-[30%] rounded-md border border-muted p-5"
             >
               <span className="text-primary-foreground text-lg">
                 {item.icon}

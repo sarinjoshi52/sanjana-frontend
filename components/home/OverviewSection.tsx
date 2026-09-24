@@ -17,8 +17,14 @@ const list = [
 
 const OverviewSection = ({ className }: OverviewProps) => {
   return (
-    <section id="overview" className={cn("scroll-mt-[135px] flex flex-row items-center", className)}>
-      <div className="w-[50%] flex flex-col items-start gap-5">
+    <section
+      id="overview"
+      className={cn(
+        "scroll-mt-[135px] flex flex-col gap-5 lg:gap-0 lg:flex-row items-center",
+        className
+      )}
+    >
+      <div className="lg:w-[50%] flex flex-col items-start gap-5">
         <Heading title="SañJñāNā Overview" />
         <ul className="pl-2 flex flex-col gap-5">
           {list.map((item, index) => (
@@ -29,7 +35,7 @@ const OverviewSection = ({ className }: OverviewProps) => {
           ))}
         </ul>
       </div>
-      <div className="rounded-xl border border-muted p-5 h-[250px] w-[50%]">
+      <div className="rounded-xl border border-muted p-5 h-[250px] w-full lg:w-[50%]">
         <div className="rounded-xl h-full w-full bg-muted"></div>
       </div>
     </section>

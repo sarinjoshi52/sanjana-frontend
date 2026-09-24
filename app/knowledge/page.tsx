@@ -73,18 +73,18 @@ export default function Knowledge() {
     >
       <div className="flex flex-col items-center gap-3">
         <h1 className="font-bold text-3xl">Knowledge Services</h1>
-        <p className="text-center text-sm text-[#475569] w-1/2">
+        <p className="text-center text-sm text-[#475569] lg:w-1/2 px-5 lg:px-0">
           Serving with knowledge — generating, refining, and applying insights
           to enrich individual and organizational performance across six
           specialized pillars.
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-7">
+      <div className="flex flex-col px-5 lg:px-0 lg:flex-wrap items-center justify-center gap-7">
         {cardData.map((card, index) => (
           <Card
             key={index}
-            className="rounded-lg hover:shadow-md shadow-none transition-shadow duration-200 border-muted border w-[27%] h-70 flex flex-col gap-3"
+            className="rounded-lg hover:shadow-md shadow-none transition-shadow duration-200 border-muted border lg:w-[27%] h-65 lg:h-70 flex flex-col gap-3"
           >
             <CardHeader>
               <div

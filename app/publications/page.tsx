@@ -33,16 +33,16 @@ export default function Publication() {
   return (
     <main
       data-aos="fade-in"
-      className="flex flex-col gap-5 px-30 min-h-[450px]"
+      className="flex flex-col gap-5 px-5 lg:px-30 min-h-[450px]"
     >
       <h1 className="text-3xl font-bold tracking-tight">
         Publications & Knowledge Resources
       </h1>
-      <div className="flex justify-center gap-5 items-center flex-wrap">
+      <div className="flex justify-center gap-5 items-center flex-col lg:flex-wrap">
         {publications.map((item, index) => (
           <CustomCard
             key={index}
-            className="w-[32%] shadow-none rounded-xl p-5 flex flex-col gap-3"
+            className="lg:w-[32%] shadow-none rounded-xl p-5 flex flex-col gap-3"
           >
             <CustomCardIcon className="text-[36px] text-primary-foreground">
               {item.icon}

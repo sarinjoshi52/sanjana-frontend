@@ -53,9 +53,12 @@ const BreadCrumb = () => {
 
   const breadcrumbs = breadcrumbItem[pathname] ?? [];
   return (
-    <div className="h-[35px] border-muted border bg-[#F1F5F9] px-20 py-2 flex flex-row gap-5 items-center shadow-md">
+    <div className="h-[35px] min-w-0 mx-auto border-muted border bg-[#F1F5F9] px-5 lg:px-20 py-2 flex flex-row flex-nowrap gap-5 items-center overflow-x-auto overflow-y-hidden shadow-md">
       {breadcrumbs.map((item, index) => (
-        <div key={index} className="group flex flex-row items-center gap-0">
+        <div
+          key={index}
+          className="group flex shrink-0 flex-row items-center gap-0"
+        >
           <ChevronRight className="w-4 h-4 text-primary-foreground" />
           <button
             type="button"

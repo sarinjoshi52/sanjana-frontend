@@ -62,12 +62,12 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main data-aos="fade-in" className="flex flex-col gap-5 px-30">
+    <main data-aos="fade-in" className="flex flex-col gap-5 px-5 lg:px-30">
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight">
           Projects & Engagements
         </h1>
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col lg:flex-row justify-between gap-5 lg:gap-0 lg:items-center">
           <span className="text-xs text-muted-foreground">
             Delivering evidence-based knowledge solutions across diverse
             healthcare, corporate, and financial institutions.
@@ -94,9 +94,9 @@ export default function Projects() {
             className="rounded-md shadow-none hover:shadow-md border-[#E2E8F0] border flex flex-col gap-5"
             key={index}
           >
-            <CardHeader className="flex justify-between items-center">
+            <CardHeader className="flex lg:flex-row flex-col gap-3 lg:gap-0 justify-between lg:items-center">
               <h3 className="font-bold text-lg">{project.title}</h3>
-              <span className="px-5 py-1 text-xs font-bold rounded-sm bg-[#F1FDFA] border border-[#9AF6E5] text-primary-foreground">
+              <span className="px-5 py-1 text-xs w-full lg:w-fit font-bold rounded-sm bg-[#F1FDFA] border border-[#9AF6E5] text-primary-foreground">
                 {project.organization}
               </span>
             </CardHeader>
