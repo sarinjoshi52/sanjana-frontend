@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <main
       data-aos="fade-in"
-      className="min-h-[450px] px-5 lg:px-30 flex lg:flex-row flex-col gap-5"
+      className="px-5 lg:px-30 flex lg:flex-row flex-col items-stretch gap-5"
     >
       <div className="flex lg:w-1/2 flex-col gap-5">
         <div className="flex flex-col gap-2">
@@ -19,7 +19,7 @@ export default function Contact() {
             collaboration opportunities.
           </p>
         </div>
-        <div className="flex flex-col rounded-lg gap-5 p-5 bg-white border border-muted">
+        <div className="flex flex-col rounded-lg gap-5 p-5 bg-white border border-muted lg:flex-1">
           <div className="flex items-center gap-2">
             <FaUser className="text-primary-foreground text-lg" />
             <div className="flex flex-col items-start">
@@ -58,7 +58,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="flex lg:w-1/2 flex-col gap-5 rounded-lg border border-muted bg-white h-fit p-10">
+      <div className="flex lg:w-1/2 flex-col gap-5 rounded-lg border border-muted bg-white p-10">
         <h3 className="text-lg font-bold tracking-tight">
           Subscrible to Mailing List
         </h3>

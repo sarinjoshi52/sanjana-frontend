@@ -35,8 +35,8 @@ const OverviewSection = ({ className }: OverviewProps) => {
           ))}
         </ul>
       </div>
-      <div className="rounded-xl border border-muted p-5 h-[250px] w-full lg:w-[50%]">
-        <div className="rounded-xl h-full w-full bg-muted"></div>
+      <div className="rounded-lg border border-muted p-4 h-[250px] w-full lg:w-[50%]">
+        <div className="rounded-lg h-full w-full bg-muted"></div>
       </div>
     </section>
   );

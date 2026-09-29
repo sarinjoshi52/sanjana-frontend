@@ -31,7 +31,7 @@ export default function KnowledgeBank() {
           featuring industry information, research data sets, manuals, and
           archived network publications.
         </p>
-        <div className="flex flex-col lg:flex-wrap justify-center gap-5 items-center">
+        <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center gap-5 items-center">
           {data.map((item, index) => (
             <div
               key={index}

@@ -101,7 +101,7 @@ const HowAreWeOrganizedSection = () => {
             Guiding our commitment to high-quality knowledge services
           </p>
         </div>
-        <div className="flex flex-col lg:flex-wrap gap-5">
+        <div className="flex flex-col lg:flex-row lg:flex-wrap gap-5">
           {serviceCardContent.map((item, index) => (
             <CustomCard
               key={index}

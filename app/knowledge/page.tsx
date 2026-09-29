@@ -80,7 +80,7 @@ export default function Knowledge() {
         </p>
       </div>
 
-      <div className="flex flex-col px-5 lg:px-0 lg:flex-wrap items-center justify-center gap-7">
+      <div className="flex flex-col px-5 lg:px-0 lg:flex-row lg:flex-wrap items-center justify-center gap-7">
         {cardData.map((card, index) => (
           <Card
             key={index}

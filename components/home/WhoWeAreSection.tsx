@@ -37,7 +37,7 @@ const WhoWeAreSection = ({ className }: WhoWeAreProps) => {
           these issues is essential for achieving developmental transformation.
         </p>
       </div>
-      <CustomCard className="px-10 pb-12 pt-15 rounded-xl shadow-none  lg:w-[37%] bg-[#F9FAFC]">
+      <CustomCard className="p-6 rounded-lg shadow-none justify-center lg:w-[37%] bg-[#F9FAFC]">
         <CustomCardIcon className="flex text-start">
           <FaQuoteLeft className="w-7 h-7 text-primary-foreground" />
         </CustomCardIcon>

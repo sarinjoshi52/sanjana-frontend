@@ -38,7 +38,7 @@ export default function Publication() {
       <h1 className="text-3xl font-bold tracking-tight">
         Publications & Knowledge Resources
       </h1>
-      <div className="flex justify-center gap-5 items-center flex-col lg:flex-wrap">
+      <div className="flex justify-center gap-5 items-center flex-col lg:flex-row lg:flex-wrap">
         {publications.map((item, index) => (
           <CustomCard
             key={index}
