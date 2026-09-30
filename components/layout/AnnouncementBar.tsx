@@ -1,6 +1,7 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
+
 const AnnouncementBar = () => {
   return (
     <div className="bg-primary w-full py-2 px-10 lg:px-20 h-fit">
