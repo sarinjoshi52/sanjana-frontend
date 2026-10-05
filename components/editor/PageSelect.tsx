@@ -25,7 +25,10 @@ export default function PageSelect({ page }: { page: SitePageId }) {
 
   return (
     <Select items={pageOptions} value={page} onValueChange={handlePageChange}>
-      <SelectTrigger aria-label="Select page to preview">
+      <SelectTrigger
+        aria-label="Select page to preview"
+        className="h-10 rounded-lg border-[#dce3e6] bg-[#f7f8f5] text-sm font-medium text-[#0c263f] shadow-sm hover:border-[#2b9d8f]/50 focus-visible:border-[#2b9d8f] focus-visible:ring-[#2b9d8f]/20"
+      >
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

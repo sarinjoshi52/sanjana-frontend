@@ -1,13 +1,16 @@
 import SiteChrome from "@/components/layout/SiteChrome";
+import PublishedSiteContent from "@/components/layout/PublishedSiteContent";
+import FloatButton from "@/components/layout/FloatButton";
 import AOSProvider from "./AOSProvider";
-import FloatButtonGate from "./FloatButtonGate";
 
 export default function SiteLayout({ children }: LayoutProps<"/">) {
   return (
     <SiteChrome>
-      <AOSProvider />
-      <div className="mt-8 mb-8">{children}</div>
-      <FloatButtonGate />
+      <PublishedSiteContent>
+        <AOSProvider />
+        <div className="mt-8 mb-8">{children}</div>
+        <FloatButton />
+      </PublishedSiteContent>
     </SiteChrome>
   );
 }

@@ -1,47 +1,51 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
-
-const menuItems = [
-  {
-    name: "About",
-    href: "/",
-  },
-  {
-    name: "Knowledge Service",
-    href: "/knowledge",
-  },
-  {
-    name: "Projects",
-    href: "/project",
-  },
-  {
-    name: "Publications",
-    href: "/publications",
-  },
-  {
-    name: "Knowledge Bank",
-    href: "/knowledge-bank",
-  },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
-];
+import {
+  defaultNavigationItems,
+  readPublishedSiteData,
+  type NavigationItem,
+} from "@/lib/editor-storage";
+import { useEditorStore } from "@/lib/editor-store";
 
 const Header = ({
   pathnameOverride,
   navigationDisabled = false,
+  navigationMode = "published",
 }: {
   pathnameOverride?: string;
   navigationDisabled?: boolean;
+  navigationMode?: "draft" | "published";
 }) => {
   const currentPathname = usePathname();
   const pathname = pathnameOverride ?? currentPathname;
   const [menuOpen, setMenuOpen] = useState<boolean>(true);
+  const [publishedMenuItems, setPublishedMenuItems] =
+    useState<NavigationItem[]>(defaultNavigationItems);
+  const draftMenuItems = useEditorStore((state) => state.navigation);
+  const hydrateEditorDrafts = useEditorStore((state) => state.hydrate);
+
+  useEffect(() => {
+    if (navigationMode === "draft") {
+      hydrateEditorDrafts();
+      return;
+    }
+
+    const readItems = () => {
+      setPublishedMenuItems(readPublishedSiteData().navigation);
+    };
+    readItems();
+    window.addEventListener("storage", readItems);
+    return () => {
+      window.removeEventListener("storage", readItems);
+    };
+  }, [hydrateEditorDrafts, navigationMode]);
+
+  const menuItems =
+    navigationMode === "draft" ? draftMenuItems : publishedMenuItems;
 
   return (
     <div data-editor-section="site-header" data-editor-label="Site header" data-editor-locked="true" data-inline-scope="header" className="flex flex-col justify-between bg-white px-6 py-5 lg:h-[100px] lg:flex-row lg:items-center lg:px-30">
@@ -79,7 +83,7 @@ const Header = ({
             const isActive = pathname === item.href;
 
             return (
-              <li key={item.name}>
+              <li key={item.id}>
                 {navigationDisabled ? (
                   <span
                     aria-current={isActive ? "page" : undefined}

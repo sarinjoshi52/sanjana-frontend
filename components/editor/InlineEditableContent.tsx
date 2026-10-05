@@ -7,26 +7,10 @@ import {
   type ReactNode,
 } from "react";
 import type { SitePageId } from "@/lib/site-pages";
+import { useEditorStore } from "@/lib/editor-store";
 
-const DRAFT_STORAGE_KEY = "sanjana-editor-text-drafts";
 const FUNCTIONAL_CONTENT_SELECTOR =
   "a, button, input, textarea, select, option, label, form, nav, summary, [role='button'], [role='tab'], [role='link'], [role='menuitem'], [role='checkbox'], [role='switch'], [role='combobox'], [role='textbox']";
-
-type TextDrafts = Record<string, string>;
-
-function readDrafts(): TextDrafts {
-  try {
-    const value: unknown = JSON.parse(
-      localStorage.getItem(DRAFT_STORAGE_KEY) ?? "{}"
-    );
-    if (value && typeof value === "object" && !Array.isArray(value)) {
-      return value as TextDrafts;
-    }
-  } catch {
-    // Start with an empty draft if saved browser data is unreadable.
-  }
-  return {};
-}
 
 function getElementPath(scope: HTMLElement, element: HTMLElement) {
   const path: number[] = [];
@@ -72,7 +56,8 @@ export default function InlineEditableContent({
     if (!root) return;
 
     root.dataset.page = page;
-    const drafts = readDrafts();
+    useEditorStore.getState().hydrate();
+    const drafts = useEditorStore.getState().texts;
 
     for (const element of root.querySelectorAll<HTMLElement>("*")) {
       if (element.closest(FUNCTIONAL_CONTENT_SELECTOR)) {
@@ -119,9 +104,7 @@ export default function InlineEditableContent({
     const key = element?.dataset.inlineEditKey;
     if (!element || !key) return;
 
-    const drafts = readDrafts();
-    drafts[key] = element.innerText;
-    localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify(drafts));
+    useEditorStore.getState().setText(key, element.innerText);
   }
 
   return (

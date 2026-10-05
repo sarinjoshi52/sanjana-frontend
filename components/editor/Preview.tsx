@@ -7,9 +7,12 @@ export default function Preview({ page }: { page: SitePageId }) {
   const currentPage = sitePages.find((item) => item.id === page)!;
 
   return (
-    <div data-editor-preview className="mx-auto w-full h-screen overflow-y-auto shadow-xl">
+    <div
+      data-editor-preview
+      className="h-full min-h-0 w-full overflow-y-auto rounded-xl border border-[#dce3e6] bg-white shadow-sm"
+    >
       <InlineEditableContent page={page}>
-        <SiteChrome pathname={currentPage.path} readOnlyNavigation>
+        <SiteChrome pathname={currentPage.path} readOnlyNavigation navigationMode="draft">
           <div className="mt-8 mb-8" data-inline-scope="page">
             <SitePageRenderer page={page} />
           </div>

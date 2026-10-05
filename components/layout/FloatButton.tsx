@@ -8,14 +8,14 @@ export default function FloatButton() {
     <Tooltip>
       <TooltipTrigger
         render={
-          <Button
-            variant="default"
-            className="fixed bottom-6 right-6 z-50 rounded-full border border-white py-5 shadow-lg ring ring-[#0c263f]"
-          >
-            <Link href="/editor">
+          <Link href="/editor">
+            <Button
+              variant="default"
+              className="fixed bottom-6 right-6 z-50 rounded-full border border-white py-5 shadow-lg ring ring-[#0c263f]"
+            >
               <PenLine />
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         }
       />
       <TooltipContent>
