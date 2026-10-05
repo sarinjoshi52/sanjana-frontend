@@ -32,12 +32,19 @@ const menuItems = [
   },
 ];
 
-const Header = () => {
-  const pathname = usePathname();
+const Header = ({
+  pathnameOverride,
+  navigationDisabled = false,
+}: {
+  pathnameOverride?: string;
+  navigationDisabled?: boolean;
+}) => {
+  const currentPathname = usePathname();
+  const pathname = pathnameOverride ?? currentPathname;
   const [menuOpen, setMenuOpen] = useState<boolean>(true);
 
   return (
-    <div className="flex flex-col justify-between bg-white px-6 py-5 lg:h-[100px] lg:flex-row lg:items-center lg:px-30">
+    <div data-editor-section="site-header" data-editor-label="Site header" data-editor-locked="true" data-inline-scope="header" className="flex flex-col justify-between bg-white px-6 py-5 lg:h-[100px] lg:flex-row lg:items-center lg:px-30">
       <div className="flex flex-row items-center justify-between gap-5">
         <div className="flex flex-row items-center gap-5">
           <div className="flex justify-center font-bold bg-primary rounded-md text-secondary text-2xl p-3">
@@ -73,21 +80,33 @@ const Header = () => {
 
             return (
               <li key={item.name}>
-                <Link
-                  href={item.href}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`relative block text-center text-sm font-semibold whitespace-nowrap transition-colors duration-200 hover:text-primary-foreground ${
-                    isActive ? "text-primary-foreground" : "text-black"
-                  }`}
-                >
-                  {item.name}
+                {navigationDisabled ? (
                   <span
-                    aria-hidden="true"
-                    className={`absolute -bottom-2 left-0 right-0 h-[3px] bg-primary-foreground transition-opacity ease-in duration-100 ${
-                      isActive ? "opacity-100" : "opacity-0"
+                    aria-current={isActive ? "page" : undefined}
+                    aria-disabled="true"
+                    className={`relative block cursor-default text-center text-sm font-semibold whitespace-nowrap ${
+                      isActive ? "text-primary-foreground" : "text-black"
                     }`}
-                  />
-                </Link>
+                  >
+                    {item.name}
+                  </span>
+                ) : (
+                  <Link
+                    href={item.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`relative block text-center text-sm font-semibold whitespace-nowrap transition-colors duration-200 hover:text-primary-foreground ${
+                      isActive ? "text-primary-foreground" : "text-black"
+                    }`}
+                  >
+                    {item.name}
+                    <span
+                      aria-hidden="true"
+                      className={`absolute -bottom-2 left-0 right-0 h-[3px] bg-primary-foreground transition-opacity ease-in duration-100 ${
+                        isActive ? "opacity-100" : "opacity-0"
+                      }`}
+                    />
+                  </Link>
+                )}
               </li>
             );
           })}

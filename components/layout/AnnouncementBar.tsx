@@ -4,7 +4,7 @@ import { IoMail } from "react-icons/io5";
 
 const AnnouncementBar = () => {
   return (
-    <div className="bg-primary w-full py-2 px-10 lg:px-20 h-fit">
+    <div data-editor-section="site-announcement" data-editor-label="Announcement bar" data-editor-locked="true" data-inline-scope="announcement" className="bg-primary w-full py-2 px-10 lg:px-20 h-fit">
       <div className="flex md:flex-row md:justify-between justify-center items-center flex-col text-white text-xs">
         <div className="flex flex-row gap-5 items-center">
           <div className="flex flex-row items-center gap-2">

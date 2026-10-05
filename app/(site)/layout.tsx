@@ -1,21 +1,13 @@
-import Announcement from "@/components/layout/AnnouncementBar";
-import Header from "@/components/layout/Header";
-import BreadCrumb from "@/components/layout/BreadCrumb";
-import Footer from "@/components/layout/Footer";
+import SiteChrome from "@/components/layout/SiteChrome";
 import AOSProvider from "./AOSProvider";
+import FloatButtonGate from "./FloatButtonGate";
 
 export default function SiteLayout({ children }: LayoutProps<"/">) {
   return (
-    <>
-      <Announcement />
-      <div id="sticky-navigation" className="sticky top-0 left-0 right-0 z-50">
-        <Header />
-        <BreadCrumb />
-      </div>
+    <SiteChrome>
       <AOSProvider />
       <div className="mt-8 mb-8">{children}</div>
-
-      <Footer />
-    </>
+      <FloatButtonGate />
+    </SiteChrome>
   );
 }

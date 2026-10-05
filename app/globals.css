@@ -129,3 +129,18 @@
     scroll-behavior: smooth;
   }
 }
+
+[data-inline-editable="true"] {
+  cursor: text;
+}
+
+[data-inline-editable="true"]:hover {
+  outline: 1px dashed color-mix(in srgb, var(--primary-foreground) 70%, transparent);
+  outline-offset: 2px;
+}
+
+[data-inline-editable="true"]:focus {
+  outline: 2px solid var(--primary-foreground);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

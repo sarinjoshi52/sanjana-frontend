@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-primary px-10 lg:px-30 py-10 flex flex-col gap-5 lg:gap-0 lg:flex-row ">
+    <footer data-editor-section="site-footer" data-editor-label="Site footer" data-editor-locked="true" data-inline-scope="footer" className="bg-primary px-10 lg:px-30 py-10 flex flex-col gap-5 lg:gap-0 lg:flex-row ">
       <div className="flex flex-col gap-5 lg:flex-row lg:gap-0 flex-1">
         <div className="flex flex-col items-start gap-2">
           <h3 className="font-bold text-white text-xs">
