@@ -41,21 +41,7 @@ export default function PageRenderer({
   return (
     <>
       {sections.map((section) => (
-        <div
-          key={section.id}
-          data-editor-section={section.id}
-          data-editor-label={
-            section.type === "hero"
-              ? "Hero"
-              : section.type === "overview"
-                ? "Overview"
-                : section.type === "who-we-are"
-                  ? "Who We Are"
-                  : section.type === "organization"
-                    ? "Organization"
-                    : "Resources"
-          }
-        >
+        <div key={section.id}>
           {renderSection(section)}
         </div>
       ))}

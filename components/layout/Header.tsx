@@ -1,59 +1,25 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
-import {
-  defaultNavigationItems,
-  readPublishedSiteData,
-  type NavigationItem,
-} from "@/lib/editor-storage";
-import { useEditorStore } from "@/lib/editor-store";
 
-const Header = ({
-  pathnameOverride,
-  navigationDisabled = false,
-  navigationMode = "published",
-}: {
-  pathnameOverride?: string;
-  navigationDisabled?: boolean;
-  navigationMode?: "draft" | "published";
-}) => {
-  const currentPathname = usePathname();
-  const pathname = pathnameOverride ?? currentPathname;
+const menuItems = [
+  { name: "About", href: "/" },
+  { name: "Knowledge Service", href: "/knowledge" },
+  { name: "Projects", href: "/project" },
+  { name: "Publications", href: "/publications" },
+  { name: "Knowledge Bank", href: "/knowledge-bank" },
+  { name: "Contact", href: "/contact" },
+];
+
+const Header = () => {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState<boolean>(true);
-  const [publishedMenuItems, setPublishedMenuItems] = useState<
-    NavigationItem[]
-  >(defaultNavigationItems);
-  const draftMenuItems = useEditorStore((state) => state.navigation);
-  const hydrateEditorDrafts = useEditorStore((state) => state.hydrate);
-
-  useEffect(() => {
-    if (navigationMode === "draft") {
-      hydrateEditorDrafts();
-      return;
-    }
-
-    const readItems = () => {
-      setPublishedMenuItems(readPublishedSiteData().navigation);
-    };
-    readItems();
-    window.addEventListener("storage", readItems);
-    return () => {
-      window.removeEventListener("storage", readItems);
-    };
-  }, [hydrateEditorDrafts, navigationMode]);
-
-  const menuItems =
-    navigationMode === "draft" ? draftMenuItems : publishedMenuItems;
 
   return (
     <div
-      data-editor-section="site-header"
-      data-editor-label="Site header"
-      data-editor-locked="true"
-      data-inline-scope="header"
       className="flex flex-col justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30"
     >
       <div className="flex flex-row items-center justify-between gap-5">
@@ -90,34 +56,22 @@ const Header = ({
             const isActive = pathname === item.href;
 
             return (
-              <li key={item.id}>
-                {navigationDisabled ? (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`relative block text-center text-sm font-semibold whitespace-nowrap transition-colors duration-200 hover:text-primary-foreground ${
+                    isActive ? "text-primary-foreground" : "text-black"
+                  }`}
+                >
+                  {item.name}
                   <span
-                    aria-current={isActive ? "page" : undefined}
-                    aria-disabled="true"
-                    className={`relative block cursor-default text-center text-sm font-semibold whitespace-nowrap ${
-                      isActive ? "text-primary-foreground" : "text-black"
+                    aria-hidden="true"
+                    className={`absolute -bottom-2 left-0 right-0 h-0.75 bg-primary-foreground transition-opacity ease-in duration-100 ${
+                      isActive ? "opacity-100" : "opacity-0"
                     }`}
-                  >
-                    {item.name}
-                  </span>
-                ) : (
-                  <Link
-                    href={item.href}
-                    aria-current={isActive ? "page" : undefined}
-                    className={`relative block text-center text-sm font-semibold whitespace-nowrap transition-colors duration-200 hover:text-primary-foreground ${
-                      isActive ? "text-primary-foreground" : "text-black"
-                    }`}
-                  >
-                    {item.name}
-                    <span
-                      aria-hidden="true"
-                      className={`absolute -bottom-2 left-0 right-0 h-0.75 bg-primary-foreground transition-opacity ease-in duration-100 ${
-                        isActive ? "opacity-100" : "opacity-0"
-                      }`}
-                    />
-                  </Link>
-                )}
+                  />
+                </Link>
               </li>
             );
           })}

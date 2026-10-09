@@ -36,15 +36,11 @@ export default function Publication() {
       className="flex flex-col gap-5 px-5 lg:px-30 min-h-[450px]"
     >
       <h1
-        data-editor-section="publications-title"
-        data-editor-label="Page title"
         className="text-3xl font-bold tracking-tight"
       >
         Publications & Knowledge Resources
       </h1>
       <div
-        data-editor-section="publication-cards"
-        data-editor-label="Publication cards"
         className="flex justify-center gap-5 items-center flex-col lg:flex-row lg:flex-wrap"
       >
         {publications.map((item, index) => (

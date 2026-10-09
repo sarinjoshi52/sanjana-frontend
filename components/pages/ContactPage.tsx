@@ -11,7 +11,7 @@ export default function Contact() {
       data-aos="fade-in"
       className="px-5 lg:px-30 flex lg:flex-row flex-col items-stretch gap-5"
     >
-      <div data-editor-section="contact-details" data-editor-label="Contact details" className="flex lg:w-1/2 flex-col gap-5">
+      <div className="flex lg:w-1/2 flex-col gap-5">
         <div className="flex flex-col gap-2">
           <h1 className="font-bold text-3xl tracking-tight">Contact Us</h1>
           <p className="text-xs text-[#64758B]">
@@ -58,7 +58,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div data-editor-section="mailing-list" data-editor-label="Mailing list form" className="flex lg:w-1/2 flex-col gap-5 rounded-lg border border-muted bg-white p-10">
+      <div className="flex lg:w-1/2 flex-col gap-5 rounded-lg border border-muted bg-white p-10">
         <h3 className="text-lg font-bold tracking-tight">
           Subscrible to Mailing List
         </h3>

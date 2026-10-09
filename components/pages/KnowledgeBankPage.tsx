@@ -22,10 +22,10 @@ export default function KnowledgeBank() {
       data-aos="fade-in"
       className="min-h-[450px] px-5 lg:px-30 flex flex-col gap-5"
     >
-      <h1 data-editor-section="knowledge-bank-title" data-editor-label="Page title" className="font-bold text-3xl tracking-tight">
+      <h1 className="font-bold text-3xl tracking-tight">
         Knowledge Bank & Archives
       </h1>
-      <div data-editor-section="knowledge-bank-content" data-editor-label="Knowledge bank content" className="bg-white rounded-lg flex flex-col border gap-5 border-[#E2E8F0] p-5">
+      <div className="bg-white rounded-lg flex flex-col border gap-5 border-[#E2E8F0] p-5">
         <p className="text-sm text-muted-foreground">
           Our Knowledge Bank serves as an institutional memory repository
           featuring industry information, research data sets, manuals, and

@@ -6,25 +6,15 @@ import Header from "@/components/layout/Header";
 
 export default function SiteChrome({
   children,
-  pathname,
-  readOnlyNavigation = false,
-  navigationMode = "published",
 }: {
   children: ReactNode;
-  pathname?: string;
-  readOnlyNavigation?: boolean;
-  navigationMode?: "draft" | "published";
 }) {
   return (
     <div className="grid min-h-svh grid-rows-[auto_auto_1fr_auto]">
       <Announcement />
       <div id="sticky-navigation" className="sticky top-0 left-0 right-0 z-50">
-        <Header
-          pathnameOverride={pathname}
-          navigationDisabled={readOnlyNavigation}
-          navigationMode={navigationMode}
-        />
-        <BreadCrumb pathnameOverride={pathname} />
+        <Header />
+        <BreadCrumb />
       </div>
       <div>{children}</div>
       <Footer />

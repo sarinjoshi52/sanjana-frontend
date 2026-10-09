@@ -63,7 +63,7 @@ const projects = [
 export default function Projects() {
   return (
     <main data-aos="fade-in" className="flex flex-col gap-5 px-5 lg:px-30">
-      <div data-editor-section="projects-heading" data-editor-label="Page heading and filters" className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight">
           Projects & Engagements
         </h1>
@@ -88,7 +88,7 @@ export default function Projects() {
         </div>
         <Separator />
       </div>
-      <div data-editor-section="projects-list" data-editor-label="Project cards" className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5">
         {projects.map((project, index) => (
           <Card
             className="rounded-md shadow-none hover:shadow-md border-[#E2E8F0] border flex flex-col gap-5"

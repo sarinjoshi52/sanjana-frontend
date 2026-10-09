@@ -71,7 +71,7 @@ export default function Knowledge() {
       id="knowledge"
       className="flex flex-col gap-10 justify-center"
     >
-      <div data-editor-section="knowledge-heading" data-editor-label="Page heading" className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-3">
         <h1 className="font-bold text-3xl">Knowledge Services</h1>
         <p className="text-center text-sm text-[#475569] lg:w-1/2 px-5 lg:px-0">
           Serving with knowledge — generating, refining, and applying insights
@@ -80,7 +80,7 @@ export default function Knowledge() {
         </p>
       </div>
 
-      <div data-editor-section="knowledge-services" data-editor-label="Service cards" className="flex flex-col px-5 lg:px-0 lg:flex-row lg:flex-wrap items-center justify-center gap-7">
+      <div className="flex flex-col px-5 lg:px-0 lg:flex-row lg:flex-wrap items-center justify-center gap-7">
         {cardData.map((card, index) => (
           <Card
             key={index}

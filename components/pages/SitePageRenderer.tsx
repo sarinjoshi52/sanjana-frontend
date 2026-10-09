@@ -1,6 +1,5 @@
 import PageRenderer from "@/components/home/PageRenderer";
 import { homePageSections } from "@/lib/home-page";
-import type { SitePageId } from "@/lib/site-pages";
 import ContactPage from "./ContactPage";
 import KnowledgeBankPage from "./KnowledgeBankPage";
 import KnowledgePage from "./KnowledgePage";
@@ -34,3 +33,10 @@ export default function SitePageRenderer({
       return <ContactPage />;
   }
 }
+export type SitePageId =
+  | "home"
+  | "knowledge"
+  | "project"
+  | "publications"
+  | "knowledge-bank"
+  | "contact";
