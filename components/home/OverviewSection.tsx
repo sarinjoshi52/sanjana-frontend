@@ -20,7 +20,7 @@ const OverviewSection = ({ className }: OverviewProps) => {
     <section
       id="overview"
       className={cn(
-        "scroll-mt-[135px] flex flex-col gap-5 lg:gap-0 lg:flex-row items-center",
+        "scroll-mt-33.75 flex flex-col gap-5 lg:gap-0 lg:flex-row items-center",
         className
       )}
     >
@@ -35,7 +35,7 @@ const OverviewSection = ({ className }: OverviewProps) => {
           ))}
         </ul>
       </div>
-      <div className="rounded-lg border border-muted p-4 h-[250px] w-full lg:w-[50%]">
+      <div className="rounded-lg border border-muted p-4 h-62.5 w-full lg:w-[50%]">
         <div className="rounded-lg h-full w-full bg-muted"></div>
       </div>
     </section>

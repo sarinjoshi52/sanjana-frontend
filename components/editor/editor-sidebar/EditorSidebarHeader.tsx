@@ -1,4 +1,3 @@
-import { GripVertical, PenLine } from "lucide-react";
 import PageSelect from "@/components/editor/PageSelect";
 import { SidebarHeader } from "@/components/ui/sidebar";
 import type { SitePageId } from "@/lib/site-pages";

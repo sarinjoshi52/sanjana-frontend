@@ -23,8 +23,9 @@ const Header = ({
   const currentPathname = usePathname();
   const pathname = pathnameOverride ?? currentPathname;
   const [menuOpen, setMenuOpen] = useState<boolean>(true);
-  const [publishedMenuItems, setPublishedMenuItems] =
-    useState<NavigationItem[]>(defaultNavigationItems);
+  const [publishedMenuItems, setPublishedMenuItems] = useState<
+    NavigationItem[]
+  >(defaultNavigationItems);
   const draftMenuItems = useEditorStore((state) => state.navigation);
   const hydrateEditorDrafts = useEditorStore((state) => state.hydrate);
 
@@ -48,7 +49,13 @@ const Header = ({
     navigationMode === "draft" ? draftMenuItems : publishedMenuItems;
 
   return (
-    <div data-editor-section="site-header" data-editor-label="Site header" data-editor-locked="true" data-inline-scope="header" className="flex flex-col justify-between bg-white px-6 py-5 lg:h-[100px] lg:flex-row lg:items-center lg:px-30">
+    <div
+      data-editor-section="site-header"
+      data-editor-label="Site header"
+      data-editor-locked="true"
+      data-inline-scope="header"
+      className="flex flex-col justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30"
+    >
       <div className="flex flex-row items-center justify-between gap-5">
         <div className="flex flex-row items-center gap-5">
           <div className="flex justify-center font-bold bg-primary rounded-md text-secondary text-2xl p-3">
@@ -105,7 +112,7 @@ const Header = ({
                     {item.name}
                     <span
                       aria-hidden="true"
-                      className={`absolute -bottom-2 left-0 right-0 h-[3px] bg-primary-foreground transition-opacity ease-in duration-100 ${
+                      className={`absolute -bottom-2 left-0 right-0 h-0.75 bg-primary-foreground transition-opacity ease-in duration-100 ${
                         isActive ? "opacity-100" : "opacity-0"
                       }`}
                     />

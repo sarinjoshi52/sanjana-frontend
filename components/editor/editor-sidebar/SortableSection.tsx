@@ -1,6 +1,6 @@
 "use client";
 
-import { GripVertical } from "lucide-react";
+import { ChevronRight, GripVertical } from "lucide-react";
 import { CSS } from "@dnd-kit/utilities";
 import { useSortable } from "@dnd-kit/sortable";
 import { Button } from "@/components/ui/button";
@@ -38,14 +38,6 @@ export default function SortableSection({
     >
       <Button
         type="button"
-        onClick={onSelect}
-        variant="ghost"
-        className="h-auto min-w-0 flex-1 justify-start rounded-md px-3 py-2 text-left text-base group-hover/section:bg-[#F1FDFA] hover:text-primary-foreground"
-      >
-        <span className="block truncate">{section.label}</span>
-      </Button>
-      <Button
-        type="button"
         aria-label={`Reorder ${section.label}`}
         variant="ghost"
         size="icon"
@@ -54,6 +46,15 @@ export default function SortableSection({
         {...listeners}
       >
         <GripVertical className="size-4" />
+      </Button>
+      <Button
+        type="button"
+        onClick={onSelect}
+        variant="ghost"
+        className="h-auto min-w-0 flex-1 justify-start rounded-md px-3 py-2 text-left text-base group-hover/section:bg-[#F1FDFA] hover:text-primary-foreground"
+      >
+        <span className="block min-w-0 flex-1 truncate">{section.label}</span>
+        <ChevronRight className="size-4 shrink-0" aria-hidden="true" />
       </Button>
     </li>
   );

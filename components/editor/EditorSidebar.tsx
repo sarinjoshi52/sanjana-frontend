@@ -59,7 +59,9 @@ export default function EditorSidebar({ page }: { page: SitePageId }) {
           (section) => section.element.parentElement === parent
         )
       ) {
-        orderedMovable.forEach((section) => parent.appendChild(section.element));
+        orderedMovable.forEach((section) =>
+          parent.appendChild(section.element)
+        );
       }
     }
 
@@ -123,7 +125,10 @@ export default function EditorSidebar({ page }: { page: SitePageId }) {
 
     ordered.forEach((section) => parent.appendChild(section.element));
     setSections((current) => rebuildOrder(current, ordered));
-    setSectionOrder(page, ordered.map((section) => section.id));
+    setSectionOrder(
+      page,
+      ordered.map((section) => section.id)
+    );
   }
 
   function handleFieldChange(field: EditorField, value: string) {
@@ -156,10 +161,7 @@ export default function EditorSidebar({ page }: { page: SitePageId }) {
     setSections([...pageSections, ...navigationSections]);
   }
 
-  function updateNavigationItem(
-    id: string,
-    updates: Partial<NavigationItem>
-  ) {
+  function updateNavigationItem(id: string, updates: Partial<NavigationItem>) {
     saveNavigation(
       navigationItems.map((item) =>
         item.id === id ? { ...item, ...updates } : item

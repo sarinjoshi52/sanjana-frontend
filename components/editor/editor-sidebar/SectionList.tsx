@@ -14,7 +14,7 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Lock } from "lucide-react";
+import { ChevronRight, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SortableSection from "./SortableSection";
 import type { EditorSection } from "./types";
@@ -72,7 +72,8 @@ export default function SectionList({
                     className="h-auto w-full justify-start gap-2 rounded-md border px-3 py-2 text-left text-base hover:border-primary-foreground hover:bg-[#F1FDFA] hover:text-primary-foreground"
                   >
                     <Lock className="size-4 shrink-0" aria-hidden="true" />
-                    {section.label}
+                    <span className="min-w-0 flex-1 truncate">{section.label}</span>
+                    <ChevronRight className="size-4 shrink-0" aria-hidden="true" />
                   </Button>
                 </li>
               ) : (
