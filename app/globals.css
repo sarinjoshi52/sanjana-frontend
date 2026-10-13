@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -135,7 +134,8 @@
 }
 
 [data-inline-editable="true"]:hover {
-  outline: 1px dashed color-mix(in srgb, var(--primary-foreground) 70%, transparent);
+  outline: 1px dashed
+    color-mix(in srgb, var(--primary-foreground) 70%, transparent);
   outline-offset: 2px;
 }
 
