@@ -4,11 +4,7 @@ import BreadCrumb from "@/components/layout/BreadCrumb";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 
-export default function SiteChrome({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function SiteChrome({ children }: { children: ReactNode }) {
   return (
     <div className="grid min-h-svh grid-rows-[auto_auto_1fr_auto]">
       <Announcement />

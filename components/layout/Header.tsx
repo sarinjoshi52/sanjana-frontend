@@ -51,7 +51,7 @@ const Header = () => {
         aria-label="Main navigation"
         className={`${
           menuOpen ? "flex" : "hidden"
-        } mt-5 border-t border-muted pt-5 lg:mt-0 lg:flex lg:border-0 lg:pt-0`}
+        } mt-5 overflow-x-auto border-t border-muted pt-5 lg:mt-0 lg:flex lg:border-0 lg:pt-0`}
       >
         <ul className="flex flex-wrap items-center gap-x-8 gap-y-4 px-2 lg:flex-nowrap lg:gap-5 lg:px-0">
           {menuItems.map((item) => {
