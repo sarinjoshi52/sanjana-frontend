@@ -20,17 +20,19 @@ const Header = () => {
 
   return (
     <div className="flex flex-col justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30">
-      <div className="flex flex-row items-center justify-between">
-        <div className="flex flex-row items-center gap-5">
+      <div className="flex flex-row items-center justify-between gap-3">
+        <div className="flex min-w-0 flex-1 flex-row items-center gap-3 sm:gap-5">
           {/* logo */}
           <div
             aria-label="logo"
-            className="flex justify-center font-bold bg-primary rounded-md text-secondary text-2xl p-3"
+            className="flex shrink-0 justify-center font-bold bg-primary rounded-md text-secondary text-2xl p-3"
           >
             S
           </div>
-          <div className="flex flex-col items-start gap-0.5">
-            <h1 className="text-primary! font-bold! text-2xl!">SañJñāNā</h1>
+          <div className="flex min-w-0 flex-col items-start gap-0.5">
+            <h1 className="text-primary! font-bold! text-xl! sm:text-2xl!">
+              SañJñāNā
+            </h1>
             <span className="uppercase text-primary-foreground text-xs tracking-wider">
               Development Pvt. Ltd.
             </span>
@@ -42,7 +44,9 @@ const Header = () => {
         <Button
           variant="ghost"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden flex size-6 p-0"
+          className="lg:hidden flex size-6 shrink-0 p-0"
+          aria-expanded={menuOpen}
+          aria-label="Toggle menu"
         >
           <Menu className="size-6" />
         </Button>
@@ -61,15 +65,16 @@ const Header = () => {
               <li key={item.name}>
                 <Link
                   href={item.href}
+                  onClick={() => setMenuOpen(false)}
                   aria-current={isActive ? "page" : undefined}
-                  className={`relative block text-center text-sm font-semibold whitespace-nowrap transition-colors duration-200 hover:text-primary-foreground ${
+                  className={`relative block pb-2 text-center text-sm font-semibold whitespace-nowrap transition-colors duration-200 hover:text-primary-foreground ${
                     isActive ? "text-primary-foreground" : "text-black"
                   }`}
                 >
                   {item.name}
                   <span
                     aria-hidden="true"
-                    className={`absolute -bottom-2 left-0 right-0 h-0.75 bg-primary-foreground transition-opacity ease-in duration-100 ${
+                    className={`absolute bottom-0 left-0 right-0 h-0.75 bg-primary-foreground transition-opacity duration-100 ease-in ${
                       isActive ? "opacity-100" : "opacity-0"
                     }`}
                   />
