@@ -19,12 +19,14 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(true);
 
   return (
-    <div
-      className="flex flex-col justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30"
-    >
+    <div className="flex flex-col justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30">
       <div className="flex flex-row items-center justify-between gap-5">
         <div className="flex flex-row items-center gap-5">
-          <div className="flex justify-center font-bold bg-primary rounded-md text-secondary text-2xl p-3">
+          {/* logo */}
+          <div
+            aria-label="logo"
+            className="flex justify-center font-bold bg-primary rounded-md text-secondary text-2xl p-3"
+          >
             S
           </div>
           <div className="flex flex-col items-start gap-0.5">
