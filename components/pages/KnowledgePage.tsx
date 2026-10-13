@@ -84,7 +84,7 @@ export default function Knowledge() {
         {cardData.map((card, index) => (
           <Card
             key={index}
-            className="rounded-lg hover:shadow-md shadow-none transition-shadow duration-200 border-muted border lg:w-[27%] h-65 lg:h-70 flex flex-col gap-3"
+            className="rounded-lg hover:shadow-md shadow-none transition-shadow duration-200 border-muted border w-full lg:w-[27%] h-65 lg:h-70 flex flex-col gap-3"
           >
             <CardHeader>
               <div

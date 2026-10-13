@@ -54,9 +54,7 @@ const BreadCrumb = ({ pathnameOverride }: { pathnameOverride?: string }) => {
 
   const breadcrumbs = breadcrumbItem[pathname] ?? [];
   return (
-    <div
-      className="h-8.75 min-w-0 mx-auto border-muted border bg-[#F1F5F9] px-5 lg:px-20 py-2 flex flex-row flex-nowrap gap-5 items-center overflow-x-auto overflow-y-hidden shadow-md"
-    >
+    <div className="h-8.75 min-w-0 mx-auto overflow-x-auto border-muted border bg-[#F1F5F9] px-5 lg:px-20 py-2 flex flex-row flex-nowrap gap-5 items-center overflow-y-hidden shadow-md">
       {breadcrumbs.map((item, index) => (
         <div
           key={index}

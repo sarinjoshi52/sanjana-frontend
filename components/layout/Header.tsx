@@ -16,11 +16,11 @@ const menuItems = [
 
 const Header = () => {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState<boolean>(true);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
     <div className="flex flex-col justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30">
-      <div className="flex flex-row items-center justify-between gap-5">
+      <div className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center gap-5">
           {/* logo */}
           <div
@@ -51,7 +51,7 @@ const Header = () => {
         aria-label="Main navigation"
         className={`${
           menuOpen ? "flex" : "hidden"
-        } mt-5 overflow-x-auto border-t border-muted pt-5 lg:mt-0 lg:flex lg:border-0 lg:pt-0`}
+        } mt-5 border-t border-muted pt-5 lg:mt-0 lg:flex lg:border-0 lg:pt-0`}
       >
         <ul className="flex flex-wrap items-center gap-x-8 gap-y-4 px-2 lg:flex-nowrap lg:gap-5 lg:px-0">
           {menuItems.map((item) => {
