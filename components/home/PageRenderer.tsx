@@ -3,6 +3,7 @@ import HowAreWeOrganizedSection from "./HowAreWeOrganizedSection";
 import OurResourceSection from "./OurResourceSection";
 import OverviewSection from "./OverviewSection";
 import WhoWeAreSection from "./WhoWeAreSection";
+import MeetOurTeam from "./MeetOurTeam";
 
 function renderSection(section: HomePageSection) {
   switch (section.type) {
@@ -26,6 +27,8 @@ function renderSection(section: HomePageSection) {
       return <OverviewSection className="w-full" />;
     case "who-we-are":
       return <WhoWeAreSection />;
+    case "meet-our-team":
+      return <MeetOurTeam />;
     case "organization":
       return <HowAreWeOrganizedSection />;
     case "resources":
@@ -41,9 +44,7 @@ export default function PageRenderer({
   return (
     <>
       {sections.map((section) => (
-        <div key={section.id}>
-          {renderSection(section)}
-        </div>
+        <div key={section.id}>{renderSection(section)}</div>
       ))}
     </>
   );

@@ -8,6 +8,7 @@ export type HomePageSection =
     }
   | { id: "overview"; type: "overview" }
   | { id: "who-we-are"; type: "who-we-are" }
+  | { id: "meet-our-team"; type: "meet-our-team" }
   | { id: "organization"; type: "organization" }
   | { id: "resources"; type: "resources" };
 
@@ -23,6 +24,7 @@ export const homePageSections: HomePageSection[] = [
   },
   { id: "overview", type: "overview" },
   { id: "who-we-are", type: "who-we-are" },
+  { id: "meet-our-team", type: "meet-our-team" },
   { id: "organization", type: "organization" },
   { id: "resources", type: "resources" },
 ];

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaFolderOpen } from "react-icons/fa";
 import { FaBoxArchive, FaNetworkWired } from "react-icons/fa6";
 
@@ -5,14 +6,17 @@ const data = [
   {
     icon: <FaFolderOpen />,
     title: "Industry Information",
+    slug: "industry_information",
   },
   {
     icon: <FaBoxArchive />,
     title: "Document Archives",
+    slug: "document_archives",
   },
   {
     icon: <FaNetworkWired />,
     title: "Network Publications",
+    slug: "network_publications",
   },
 ];
 
@@ -32,16 +36,17 @@ export default function KnowledgeBank() {
           archived network publications.
         </p>
         <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center gap-5 items-center">
-          {data.map((item, index) => (
-            <div
-              key={index}
-              className="flex bg-[#F9FAFC] items-center gap-2 w-full lg:w-[30%] rounded-md border border-muted p-5"
+          {data.map((item) => (
+            <Link
+              href={`/knowledge-bank/${item.slug}`}
+              key={item.slug}
+              className="flex bg-[#F9FAFC] hover:shadow-md transition-shadow duration-300 items-center gap-2 w-full lg:w-[30%] rounded-md border border-muted p-5"
             >
               <span className="text-primary-foreground text-lg">
                 {item.icon}
               </span>
               <span className="text-xs font-bold">{item.title}</span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -19,7 +19,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
-    <div className="flex flex-col justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30">
+    <div className="flex flex-col overflow-hidden justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30">
       <div className="flex flex-row items-center justify-between gap-3">
         <div className="flex min-w-0 flex-1 flex-row items-center gap-3 sm:gap-5">
           {/* logo */}

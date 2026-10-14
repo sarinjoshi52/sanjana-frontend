@@ -1,12 +1,18 @@
 "use client";
 
 import { ChevronRight } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+
+type BreadcrumbItem = {
+  label: string;
+  target?: string;
+  href?: string;
+};
 
 const BreadCrumb = ({ pathnameOverride }: { pathnameOverride?: string }) => {
   const currentPathname = usePathname();
   const pathname = pathnameOverride ?? currentPathname;
-  const breadcrumbItem: Record<string, { label: string; target: string }[]> = {
+  const breadcrumbItem: Record<string, BreadcrumbItem[]> = {
     "/": [
       { label: "SañJñāNā Overview", target: "overview" },
       { label: "Who Are We?", target: "who-are-we" },
@@ -17,19 +23,28 @@ const BreadCrumb = ({ pathnameOverride }: { pathnameOverride?: string }) => {
     "/knowledge": [
       {
         label: "Competency Development (COD)",
-        target: "knowledge",
+        href: "/knowledge/competency_development",
       },
       {
         label: "Professional Development (PRD)",
-        target: "knowledge",
+        href: "/knowledge/professional_development",
       },
       {
         label: "Organization Development (ORD)",
-        target: "knowledge",
+        href: "/knowledge/organization_development",
       },
-      { label: "Advisory Services (ADS)", target: "knowledge" },
-      { label: "Analytical Services (ANS)", target: "knowledge" },
-      { label: "Information Services (INS)", target: "knowledge" },
+      {
+        label: "Advisory Services (ADS)",
+        href: "/knowledge/advisory_services",
+      },
+      {
+        label: "Analytical Services (ANS)",
+        href: "/knowledge/analytical_services",
+      },
+      {
+        label: "Information Services (INS)",
+        href: "/knowledge/information_services",
+      },
     ],
     "/project": [
       { label: "Completed Projects", target: "completed-projects" },
@@ -52,19 +67,46 @@ const BreadCrumb = ({ pathnameOverride }: { pathnameOverride?: string }) => {
     ],
   };
 
-  const breadcrumbs = breadcrumbItem[pathname] ?? [];
+  const getBreadcrumbs = (pathname: string): BreadcrumbItem[] => {
+    // Exact route match first
+    if (breadcrumbItem[pathname]) {
+      return breadcrumbItem[pathname];
+    }
+
+    // Fallback for dynamic detail pages
+    if (pathname.startsWith("/knowledge/")) {
+      return breadcrumbItem["/knowledge"] ?? [];
+    }
+
+    if (pathname.startsWith("/project/")) {
+      return breadcrumbItem["/project"] ?? [];
+    }
+
+    return [];
+  };
+
+  const breadcrumbs = getBreadcrumbs(pathname);
+
+  const router = useRouter();
   return (
-    <div className="h-8.75 min-w-0 mx-auto overflow-x-auto border-muted border bg-[#F1F5F9] px-5 lg:px-20 py-2 flex flex-row flex-nowrap gap-5 items-center overflow-y-hidden shadow-md">
+    <div className="h-8.75  min-w-0 mx-auto overflow-x-auto border-muted border bg-[#F1F5F9] px-5 lg:px-20 py-2 flex flex-row flex-nowrap gap-5 items-center overflow-y-hidden shadow-md">
       {breadcrumbs.map((item, index) => (
         <div
           key={index}
-          className="group flex shrink-0 flex-row items-center gap-0"
+          className="group cursor-pointer flex shrink-0 flex-row items-center gap-0"
         >
           <ChevronRight className="w-4 h-4 text-primary-foreground" />
           <button
             type="button"
-            className="text-xs cursor-pointer text-black group-hover:text-primary-foreground transition-colors duration-200"
+            className="text-xs text-black group-hover:text-primary-foreground transition-colors duration-200"
             onClick={() => {
+              if (item.href) {
+                router.push(item.href);
+                return;
+              }
+
+              if (!item.target) return;
+
               const target = document.getElementById(item.target);
               if (!target) return;
 

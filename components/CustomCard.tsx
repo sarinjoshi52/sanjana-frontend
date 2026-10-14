@@ -3,12 +3,14 @@ import { Card, CardDescription, CardTitle } from "./ui/card";
 
 type Props = {
   className?: string;
+  onClick?: () => void;
   children: React.ReactNode;
 };
 
-export const CustomCard = ({ className, children }: Props) => {
+export const CustomCard = ({ className, children, onClick }: Props) => {
   return (
     <Card
+      onClick={onClick}
       className={cn("rounded-2xl border border-[#E2E8F0] bg-white", className)}
     >
       {children}
