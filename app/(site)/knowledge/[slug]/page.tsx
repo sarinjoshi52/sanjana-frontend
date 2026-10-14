@@ -18,7 +18,7 @@ export default async function KnowledgeDetail({
     <main
       data-aos="fade-in"
       data-aos-duration="700"
-      className="flex flex-col p-5 gap-5 md:px-10 lg:px-[60px]"
+      className="flex flex-col p-5 gap-5 md:px-10 lg:px-[60px] -mt-7"
     >
       <PreviousUrl />
       {/* Service Header */}

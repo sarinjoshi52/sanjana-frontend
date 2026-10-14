@@ -59,7 +59,11 @@ const Header = () => {
       >
         <ul className="flex flex-wrap items-center gap-x-8 gap-y-4 px-2 lg:flex-nowrap lg:gap-5 lg:px-0">
           {menuItems.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname === item.href ||
+                  pathname.startsWith(`${item.href}/`);
 
             return (
               <li key={item.name}>

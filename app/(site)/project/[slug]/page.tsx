@@ -45,13 +45,13 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
       aria-labelledby="project-title"
       data-aos="fade-up"
       data-aos-duration="700"
-      className="flex flex-col gap-7 p-5 md:px-10 lg:px-[60px] lg:py-5"
+      className="flex flex-col gap-7 p-5 md:px-10 lg:px-[60px] lg:py-5 -mt-7"
     >
       <PreviousUrl />
       {/* Project Header */}
       <header
         aria-label="Project information"
-        className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white"
+        className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white "
       >
         <div className="relative flex flex-col gap-5 p-6 md:p-9">
           <nav
