@@ -46,19 +46,18 @@ export default function MeetOurTeam() {
       <Tabs
         defaultValue={options[0].name}
         orientation="horizontal"
-        className="flex w-full border p-5 border-muted rounded-lg bg-white flex-col gap-5"
+        className="flex w-full border p-5 border-muted rounded-lg bg-white flex-col gap-0"
       >
         {/* Tabs directly below heading */}
         <TabsList
           variant="line"
-          className="h-auto w-fit justify-start gap-2 rounded-none border-b bg-transparent p-0"
+          className="h-auto border-b border-muted w-fit justify-start gap-2"
         >
           {options.map((option) => (
             <TabsTrigger
               key={option.name}
               value={option.name}
-              className=" cursor-pointer border-b-2 border-transparent px-4 py-3 text-sm  
-              data-[state=active]:text-primary-foreground"
+              className="cursor-pointer px-4 py-3 text-sm"
             >
               {option.name}
             </TabsTrigger>

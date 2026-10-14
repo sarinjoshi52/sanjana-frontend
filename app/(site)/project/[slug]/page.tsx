@@ -7,6 +7,7 @@ import {
   Clock3,
   FolderKanban,
 } from "lucide-react";
+import PreviousUrl from "@/components/common/PreviousUrl";
 
 type ProjectDetailProps = {
   params: Promise<{ slug: string }>;
@@ -46,6 +47,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
       data-aos-duration="700"
       className="flex flex-col gap-7 p-5 md:px-10 lg:px-[60px] lg:py-5"
     >
+      <PreviousUrl />
       {/* Project Header */}
       <header
         aria-label="Project information"

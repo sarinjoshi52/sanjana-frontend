@@ -1,3 +1,4 @@
+import PreviousUrl from "@/components/common/PreviousUrl";
 import { cardData } from "@/data/knowledge";
 import { notFound } from "next/navigation";
 
@@ -17,8 +18,9 @@ export default async function KnowledgeDetail({
     <main
       data-aos="fade-in"
       data-aos-duration="700"
-      className="flex flex-col p-5 md:px-10 lg:px-[60px]"
+      className="flex flex-col p-5 gap-5 md:px-10 lg:px-[60px]"
     >
+      <PreviousUrl />
       {/* Service Header */}
       <section
         className="relative overflow-hidden rounded-xl px-5 py-7 md:px-8 md:py-9"
