@@ -28,8 +28,12 @@ export default async function KnowledgeDetail({
       <header className="flex items-start gap-4">
         <span
           aria-hidden="true"
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-sm font-bold uppercase md:h-14 md:w-14"
-          style={{ backgroundColor: service.bgcolor, color: service.color }}
+          className="flex h-12 w-12 border shrink-0 items-center justify-center rounded-xl text-lg font-bold uppercase md:h-14 md:w-14"
+          style={{
+            backgroundColor: service.bgcolor,
+            color: service.color,
+            borderColor: service.color,
+          }}
         >
           {service.name}
         </span>

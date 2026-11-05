@@ -38,7 +38,9 @@ export default function Knowledge() {
             <CardHeader>
               <div
                 className={`flex items-center justify-center p-5 w-12 h-12 rounded-lg`}
-                style={{ backgroundColor: `${card.bgcolor}` }}
+                style={{
+                  backgroundColor: `${card.bgcolor}`,
+                }}
               >
                 <span
                   className={`uppercase font-bold text-xl`}
