@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronRight } from "lucide-react";
+import ImagePlaceholder from "@/components/common/ImagePlaceholder";
 import Heading from "./Heading";
 
 const list = [
@@ -27,7 +28,7 @@ const OurResourceSection = () => {
     >
       <Heading title="Our Core Resources" />
 
-      <div className="flex flex-col lg:flex-row gap-5 h-100">
+      <div className="flex flex-col lg:flex-row gap-5 lg:h-100">
         <div className="border border-muted bg-white rounded-xl h-full p-5 flex flex-col gap-5">
           <p className="text-muted-foreground text-sm">
             What distinguishes SañJñāNā is the wealth of knowledge resources it
@@ -45,7 +46,9 @@ const OurResourceSection = () => {
             ))}
           </ul>
         </div>
-        <div className="border border-muted rounded-xl bg-muted w-full h-full p-5 flex flex-col gap-5"></div>
+        <div className="w-full min-h-48 lg:min-h-0 lg:h-full rounded-xl border border-muted bg-white p-3">
+          <ImagePlaceholder label="Core resources image" />
+        </div>
       </div>
     </section>
   );

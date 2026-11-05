@@ -1,6 +1,8 @@
-import PreviousUrl from "@/components/common/PreviousUrl";
-import { cardData } from "@/data/knowledge";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Check } from "lucide-react";
+import PreviousUrl from "@/components/common/PreviousUrl";
+import { cardData, serviceDetails } from "@/data/knowledge";
 
 type KnowledgeDetailProps = {
   params: Promise<{ slug: string }>;
@@ -11,79 +13,109 @@ export default async function KnowledgeDetail({
 }: KnowledgeDetailProps) {
   const { slug } = await params;
   const service = cardData.find((card) => card.slug === slug);
+  const detail = serviceDetails[slug];
 
-  if (!service) notFound();
+  if (!service || !detail) notFound();
 
   return (
     <main
+      aria-labelledby="service-title"
       data-aos="fade-in"
       data-aos-duration="700"
-      className="flex flex-col p-5 gap-5 md:px-10 lg:px-[60px] -mt-7"
+      className="flex flex-col gap-6 px-5 pb-10 md:px-10 lg:px-[60px]"
     >
-      <PreviousUrl />
-      {/* Service Header */}
-      <section
-        className="relative overflow-hidden rounded-xl px-5 py-7 md:px-8 md:py-9"
-        style={{ backgroundColor: service.bgcolor }}
-      >
-        <div className="relative z-10 flex max-w-4xl flex-col items-start gap-3">
-          {/* Service Label */}
-          <span
-            className="rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em]"
-            style={{
-              color: service.color,
-              borderColor: `${service.color}40`,
-              backgroundColor: "#FFFFFF80",
-            }}
+      <PreviousUrl label="Back to Knowledge Services" />
+      <header className="flex items-start gap-4">
+        <span
+          aria-hidden="true"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-sm font-bold uppercase md:h-14 md:w-14"
+          style={{ backgroundColor: service.bgcolor, color: service.color }}
+        >
+          {service.name}
+        </span>
+        <div className="flex flex-col gap-2">
+          <h1
+            id="service-title"
+            className="text-2xl font-bold leading-tight tracking-tight text-slate-900 lg:text-3xl"
           >
-            Knowledge Services
-          </span>
+            {service.title}
+          </h1>
+          <p className="max-w-4xl text-xs leading-7 text-slate-600 md:text-sm md:leading-8">
+            {detail.summary}
+          </p>
+        </div>
+      </header>
 
-          {/* Title and Acronym */}
-          <div className="flex flex-wrap items-center gap-3">
-            <h1
-              className="text-2xl font-bold tracking-tight md:text-4xl"
-              style={{ color: service.color }}
+      <div className="grid items-start gap-6 lg:grid-cols-[2fr_1fr]">
+        <div className="flex flex-col gap-6">
+          <section
+            aria-labelledby="service-overview-heading"
+            className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+          >
+            <h2
+              id="service-overview-heading"
+              className="mb-4 text-base font-bold text-slate-900"
             >
-              {service.title}
-            </h1>
+              Overview
+            </h2>
+            <p className="text-xs leading-7 text-slate-600 md:text-sm md:leading-8">
+              {detail.overview}
+            </p>
+          </section>
 
-            <span
-              className="rounded-md px-2.5 py-1 text-sm font-bold uppercase"
-              style={{
-                color: service.color,
-                backgroundColor: "#FFFFFFB3",
-              }}
+          <section
+            aria-labelledby="service-process-heading"
+            className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+          >
+            <h2
+              id="service-process-heading"
+              className="mb-5 text-base font-bold text-slate-900"
             >
-              {service.name}
-            </span>
-          </div>
-
-          {/* Accent Line */}
-          <div
-            className="h-1 w-12 rounded-full"
-            style={{ backgroundColor: service.color }}
-          />
+              How we work
+            </h2>
+            <ul className="flex flex-col gap-4">
+              {detail.howWeWork.map((step) => (
+                <li key={step} className="flex items-start gap-4">
+                  <Check
+                    aria-hidden="true"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-[#2B9D8F]"
+                  />
+                  <p className="text-sm leading-6 text-slate-700">{step}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
 
-        {/* Decorative Background Element */}
-        <div
-          aria-hidden="true"
-          className="absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-25 blur-3xl"
-          style={{ backgroundColor: service.color }}
-        />
-      </section>
-
-      {/* Service Description */}
-      <section className="w-full max-w-3xl px-2 py-7 md:px-4 md:py-9">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          Overview
-        </h2>
-
-        <p className="text-xs leading-7 text-slate-600 md:text-base md:leading-7">
-          {service.description}
-        </p>
-      </section>
+        <aside
+          aria-labelledby="service-offerings-heading"
+          className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+        >
+          <h2
+            id="service-offerings-heading"
+            className="mb-5 text-base font-bold text-slate-900"
+          >
+            Key Offerings
+          </h2>
+          <ul className="flex flex-col gap-3">
+            {detail.offerings.map((offering) => (
+              <li key={offering} className="flex items-start gap-3">
+                <Check
+                  aria-hidden="true"
+                  className="mt-0.5 h-4 w-4 shrink-0 text-[#2B9D8F]"
+                />
+                <p className="text-sm leading-6 text-slate-600">{offering}</p>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/contact"
+            className="mt-6 flex w-full items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            Get in touch
+          </Link>
+        </aside>
+      </div>
     </main>
   );
 }

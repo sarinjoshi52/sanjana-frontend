@@ -1,5 +1,3 @@
-"use client";
-
 import { HiMiniBookOpen } from "react-icons/hi2";
 import { BiSolidReport } from "react-icons/bi";
 import { FaNewspaper } from "react-icons/fa6";
@@ -9,7 +7,7 @@ import {
   CustomCardIcon,
   CustomCardTitle,
 } from "@/components/CustomCard";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const publications = [
   {
@@ -36,7 +34,6 @@ const publications = [
 ];
 
 export default function Publication() {
-  const router = useRouter();
   return (
     <main
       data-aos="fade-in"
@@ -47,19 +44,21 @@ export default function Publication() {
       </h1>
       <div className="flex justify-center gap-5 items-center flex-col lg:flex-row lg:flex-wrap">
         {publications.map((item, index) => (
-          <CustomCard
-            onClick={() => router.push(`/publications/${item.slug}`)}
+          <Link
             key={index}
-            className="lg:w-[32%] cursor-pointer max-h-40 shadow-none rounded-xl p-5 flex flex-col gap-3"
+            href={`/publications/${item.slug}`}
+            className="w-full lg:w-[32%] rounded-xl focus-visible:outline-2 focus-visible:outline-primary-foreground"
           >
-            <CustomCardIcon className="text-[36px] text-primary-foreground">
-              {item.icon}
-            </CustomCardIcon>
-            <CustomCardTitle className="text-xl font-bold">
-              {item.title}
-            </CustomCardTitle>
-            <CustomCardDescription>{item.description}</CustomCardDescription>
-          </CustomCard>
+            <CustomCard className="h-full cursor-pointer shadow-none rounded-xl p-5 flex flex-col gap-3">
+              <CustomCardIcon className="text-[36px] text-primary-foreground">
+                {item.icon}
+              </CustomCardIcon>
+              <CustomCardTitle className="text-xl font-bold">
+                {item.title}
+              </CustomCardTitle>
+              <CustomCardDescription>{item.description}</CustomCardDescription>
+            </CustomCard>
+          </Link>
         ))}
       </div>
     </main>

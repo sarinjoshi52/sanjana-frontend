@@ -77,7 +77,7 @@ const HowAreWeOrganizedSection = () => {
         {cardContent.map((card, index) => (
           <CustomCard
             key={index}
-            className="rounded-lg py-5 shadow-none h-[130px]"
+            className="rounded-lg py-5 shadow-none min-h-[130px]"
           >
             <CustomCardIcon className="flex justify-center text-3xl text-primary-foreground">
               {card.icon}
@@ -95,7 +95,7 @@ const HowAreWeOrganizedSection = () => {
       >
         <div className="flex flex-col gap-2 items-start">
           <h3 className="font-bold text-secondary text-xl">
-            Service Priciple & Approaches
+            Service Principle & Approaches
           </h3>
           <p className="text-[#94A3B8] text-xs">
             Guiding our commitment to high-quality knowledge services

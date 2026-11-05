@@ -58,9 +58,9 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="flex lg:w-1/2 flex-col gap-5 rounded-lg border border-muted bg-white p-10">
+      <div className="flex lg:w-1/2 flex-col gap-5 rounded-lg border border-muted bg-white p-5 md:p-10">
         <h3 className="text-lg font-bold tracking-tight">
-          Subscrible to Mailing List
+          Subscribe to Mailing List
         </h3>
         <div className="flex flex-col gap-5">
           <p className="text-xs text-[#64758B]">
@@ -72,6 +72,11 @@ export default function Contact() {
             <FieldLabel className="text-xs font-bold">Full Name</FieldLabel>
             <Input
               className="bg-transparent text-xs! rounded-sm border border-muted"
+              type="text"
+              name="name"
+              autoComplete="name"
+              maxLength={100}
+              required
               placeholder="Your Name"
             />
           </Field>
@@ -79,6 +84,11 @@ export default function Contact() {
             <FieldLabel className="text-xs font-bold">Email Address</FieldLabel>
             <Input
               className="bg-transparent text-xs! rounded-sm border border-muted"
+              type="email"
+              name="email"
+              autoComplete="email"
+              maxLength={254}
+              required
               placeholder="you@organization.com"
             />
           </Field>

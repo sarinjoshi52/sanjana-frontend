@@ -1,5 +1,5 @@
-import SitePageRenderer from "@/components/pages/SitePageRenderer";
+import PublicationsPage from "@/components/pages/PublicationsPage";
 
-export default function Publication() {
-  return <SitePageRenderer page="publications" />;
+export default function Page() {
+  return <PublicationsPage />;
 }

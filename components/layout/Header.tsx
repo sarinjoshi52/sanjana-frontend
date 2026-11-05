@@ -30,9 +30,9 @@ const Header = () => {
             S
           </div>
           <div className="flex min-w-0 flex-col items-start gap-0.5">
-            <h1 className="text-primary! font-bold! text-xl! sm:text-2xl!">
+            <p className="text-primary font-bold text-xl sm:text-2xl leading-tight">
               SañJñāNā
-            </h1>
+            </p>
             <span className="uppercase text-primary-foreground text-xs tracking-wider">
               Development Pvt. Ltd.
             </span>

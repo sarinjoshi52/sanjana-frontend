@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "cn";
+import ImagePlaceholder from "@/components/common/ImagePlaceholder";
 import Heading from "./Heading";
 import { FaCircleCheck } from "react-icons/fa6";
 
@@ -36,7 +37,7 @@ const OverviewSection = ({ className }: OverviewProps) => {
         </ul>
       </div>
       <div className="rounded-lg border border-muted p-4 h-62.5 w-full lg:w-[50%]">
-        <div className="rounded-lg h-full w-full bg-muted"></div>
+        <ImagePlaceholder label="Overview image" />
       </div>
     </section>
   );

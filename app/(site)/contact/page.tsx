@@ -1,5 +1,5 @@
-import SitePageRenderer from "@/components/pages/SitePageRenderer";
+import ContactPage from "@/components/pages/ContactPage";
 
-export default function Contact() {
-  return <SitePageRenderer page="contact" />;
+export default function Page() {
+  return <ContactPage />;
 }

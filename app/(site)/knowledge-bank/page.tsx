@@ -1,5 +1,5 @@
-import SitePageRenderer from "@/components/pages/SitePageRenderer";
+import KnowledgeBankPage from "@/components/pages/KnowledgeBankPage";
 
-export default function KnowledgeBank() {
-  return <SitePageRenderer page="knowledge-bank" />;
+export default function Page() {
+  return <KnowledgeBankPage />;
 }

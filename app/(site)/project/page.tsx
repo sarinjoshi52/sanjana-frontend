@@ -1,5 +1,5 @@
-import SitePageRenderer from "@/components/pages/SitePageRenderer";
+import ProjectsPage from "@/components/pages/ProjectsPage";
 
-export default function Projects() {
-  return <SitePageRenderer page="project" />;
+export default function Page() {
+  return <ProjectsPage />;
 }
