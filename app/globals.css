@@ -1,22 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-.card-hover {
-  @apply hover:border-primary-foreground hover:shadow-md transition-all duration-300;
-}
-
-.card-hover-knowledge {
-  transition: all 300ms ease;
-}
-
-.card-hover-knowledge:hover {
-  border-color: var(--card-hover-color);
-  @apply shadow-md;
-}
-
 @theme inline {
+  --font-sans: var(--font-inter);
+  --font-geist-mono: var(--font-cal-sans);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -140,6 +130,12 @@
     @apply font-sans;
     scroll-behavior: smooth;
   }
+}
+
+h1 {
+  font-family: var(--font-cal-sans);
+  font-weight: 700;
+  font-size: 2.25rem;
 }
 
 [data-inline-editable="true"] {
