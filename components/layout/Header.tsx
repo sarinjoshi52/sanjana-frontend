@@ -21,7 +21,10 @@ const Header = () => {
   return (
     <div className="flex flex-col overflow-hidden justify-between bg-white px-6 py-5 lg:h-25 lg:flex-row lg:items-center lg:px-30">
       <div className="flex flex-row items-center justify-between gap-3">
-        <div className="flex min-w-0 flex-1 flex-row items-center gap-3 sm:gap-5">
+        <Link
+          href={"/"}
+          className="select-none cursor-pointer flex min-w-0 flex-1 flex-row items-center gap-3 sm:gap-5"
+        >
           {/* logo */}
           <div
             aria-label="logo"
@@ -29,7 +32,7 @@ const Header = () => {
           >
             S
           </div>
-          <div className="flex min-w-0 flex-col items-start gap-0.5">
+          <div className=" flex min-w-0 flex-col items-start gap-0.5">
             <p className="text-primary font-bold text-xl sm:text-2xl leading-tight">
               SañJñāNā
             </p>
@@ -40,7 +43,7 @@ const Header = () => {
               Institution • Knowledge • Leadership
             </span>
           </div>
-        </div>
+        </Link>
         <Button
           variant="ghost"
           onClick={() => setMenuOpen(!menuOpen)}

@@ -7,6 +7,15 @@
   @apply hover:border-primary-foreground hover:shadow-md transition-all duration-300;
 }
 
+.card-hover-knowledge {
+  transition: all 300ms ease;
+}
+
+.card-hover-knowledge:hover {
+  border-color: var(--card-hover-color);
+  @apply shadow-md;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
