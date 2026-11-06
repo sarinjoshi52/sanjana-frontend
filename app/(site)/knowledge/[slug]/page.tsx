@@ -54,7 +54,7 @@ export default async function KnowledgeDetail({
         <div className="flex flex-col gap-6">
           <section
             aria-labelledby="service-overview-heading"
-            className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+            className="card-hover rounded-2xl border border-slate-200 transition-all duration-300 bg-white p-6 md:p-8"
           >
             <h2
               id="service-overview-heading"
@@ -69,7 +69,7 @@ export default async function KnowledgeDetail({
 
           <section
             aria-labelledby="service-process-heading"
-            className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+            className="card-hover rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
           >
             <h2
               id="service-process-heading"
@@ -93,7 +93,7 @@ export default async function KnowledgeDetail({
 
         <aside
           aria-labelledby="service-offerings-heading"
-          className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+          className="card-hover rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
         >
           <h2
             id="service-offerings-heading"

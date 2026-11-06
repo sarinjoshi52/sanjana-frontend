@@ -68,7 +68,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
       <div className="grid items-start gap-6 lg:grid-cols-[2fr_1fr]">
         <section
           aria-labelledby="project-outcomes-heading"
-          className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+          className="card-hover rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
         >
           <h2
             id="project-outcomes-heading"
@@ -91,7 +91,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
 
         <aside
           aria-labelledby="project-details-heading"
-          className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+          className="card-hover rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
         >
           <h2
             id="project-details-heading"

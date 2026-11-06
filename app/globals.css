@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.card-hover {
+  @apply hover:border-primary-foreground hover:shadow-md transition-all duration-300;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
