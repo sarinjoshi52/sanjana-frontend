@@ -40,7 +40,7 @@ export default function Projects() {
           <Link
             key={project.id}
             href={`/project/${project.id}`}
-            className="block rounded-md focus-visible:outline-2 focus-visible:outline-primary-foreground"
+            className="block rounded-md card-hover"
           >
             <Card className="cursor-pointer rounded-md shadow-none hover:shadow-md border-[#E2E8F0] border flex flex-col gap-5">
               <CardHeader className="flex lg:flex-row flex-col gap-3 lg:gap-0 justify-between lg:items-center">

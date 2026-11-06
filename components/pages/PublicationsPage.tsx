@@ -47,7 +47,7 @@ export default function Publication() {
           <Link
             key={index}
             href={`/publications/${item.slug}`}
-            className="w-full lg:w-[32%] rounded-xl focus-visible:outline-2 focus-visible:outline-primary-foreground"
+            className="card-hover w-full lg:w-[32%] rounded-xl focus-visible:outline-2 focus-visible:outline-primary-foreground"
           >
             <CustomCard className="h-full cursor-pointer shadow-none rounded-xl p-5 flex flex-col gap-3">
               <CustomCardIcon className="text-[36px] text-primary-foreground">
