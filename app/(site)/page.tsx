@@ -1,3 +1,11 @@
+import HeroSection from "@/components/home/HeroSection";
+import WhoWeAreSection from "@/components/home/WhoWeAreSection";
+
 export default function Page() {
-  return <div></div>;
+  return (
+    <main className="flex flex-1 flex-col">
+      <HeroSection />
+      <WhoWeAreSection />
+    </main>
+  );
 }

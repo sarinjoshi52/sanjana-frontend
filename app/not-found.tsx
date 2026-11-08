@@ -1,55 +1,31 @@
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, SearchX } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, Compass } from "lucide-react";
 
 export default function NotFound() {
   return (
     <main
       aria-labelledby="not-found-title"
-      className="flex items-center justify-center overflow-hidden bg-background px-5 py-10"
+      className="flex min-h-svh w-full items-center justify-center overflow-hidden px-5 py-10"
     >
-      <section className=" flex w-full max-w-lg flex-col items-center gap-3 rounded-2xl border border-muted bg-white px-6 py-10 text-center md:px-10">
+      <section className="flex flex-col gap-5 items-center justify-center">
+        <div className="flex items-center justify-center p-5 bg-[#E3F4EC] rounded-xl">
+          <SearchX className="text-primary-foreground w-7 h-7" />
+        </div>
+        <div className="flex flex-col items-center ">
+          <p className="font-outfit font-bold text-[48px] text-primary">
+            404 — Page not found
+          </p>
+          <p className="font-outfit text-base w-[80%] text-center text-muted-foreground">
+            The page you are looking for does not exist or has been moved.
+          </p>
+        </div>
         <Link
-          href="/"
-          aria-label="SañJñāNā home"
-          className="flex size-12 items-center justify-center rounded-md bg-primary text-xl font-bold text-secondary"
+          href={"/"}
+          className="bg-primary-foreground text-white hover:bg-primary rounded-full cursor-pointer flex items-center px-3 gap-2 py-3"
         >
-          S
+          <ArrowLeft /> Back Home
         </Link>
-
-        <div className="mt-4 flex items-center justify-center">
-          <span
-            aria-hidden="true"
-            className="select-none text-7xl font-bold leading-none tracking-tight text-[#F0F6FF] sm:text-8xl"
-          >
-            404
-          </span>
-        </div>
-
-        <h1
-          id="not-found-title"
-          className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"
-        >
-          Page not found
-        </h1>
-        <p className="max-w-sm text-xs leading-6 text-muted-foreground sm:text-sm">
-          The page you are looking for may have been moved or no longer exists.
-        </p>
-
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          >
-            Back to home
-            <ArrowRight aria-hidden="true" className="size-4" />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center rounded-lg border border-primary px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
-          >
-            Contact us
-          </Link>
-        </div>
       </section>
     </main>
   );
