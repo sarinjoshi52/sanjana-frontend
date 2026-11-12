@@ -4,10 +4,11 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section
+      id="home"
       data-aos="fade-up"
-      className="flex flex-1 flex-col items-start justify-center gap-8 py-8 sm:gap-10 sm:py-10"
+      className="flex flex-1 flex-col items-start justify-center gap-8 py-16 sm:gap-10 sm:py-20"
     >
-      <div className="flex w-1/2 max-w-5xl flex-col gap-5">
+      <div className="flex w-full max-w-5xl flex-col gap-5 sm:w-4/5 lg:w-1/2">
         <span className="font-outfit font-semibold text-primary-foreground text-base tracking-wide rounded-full px-5 py-2 bg-[#E3F4EC] w-fit">
           Institution Knowledge Leadership
         </span>

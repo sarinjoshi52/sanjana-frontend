@@ -1,9 +1,9 @@
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import AOSProvider from "@/components/layout/AOSProvider";
 import Header from "@/components/layout/Header";
 import { ReactNode } from "react";
 import "aos/dist/aos.css";
 import ScrollToTop from "@/components/common/ScrollToTop";
+import Footer from "@/components/layout/Footer";
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
@@ -17,10 +17,13 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       </div>
       <ScrollToTop />
       <AOSProvider>
-        <div className="flex flex-1 flex-col px-5 py-6 sm:px-5 sm:py-8 lg:px-[5%] lg:py-10 xl:px-[10%]">
+        <div className="flex flex-1 flex-col pt-6 sm:pt-8 lg:pt-10">
           {children}
         </div>
       </AOSProvider>
+      <div className="mt-auto shrink-0">
+        <Footer />
+      </div>
     </main>
   );
 }

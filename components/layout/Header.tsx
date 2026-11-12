@@ -47,7 +47,7 @@ export default function Header() {
         <Drawer open={menuOpen} onOpenChange={setMenuOpen} swipeDirection="up">
           <Button
             variant="ghost"
-            className="flex mid:hidden"
+            className="flex xl:hidden"
             aria-label="Open menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(true)}
@@ -92,7 +92,7 @@ export default function Header() {
             </ul>
           </DrawerContent>
         </Drawer>
-        <ul className="hidden mid:flex h-full flex-wrap items-center font-outfit justify-end gap-x-5 gap-y-2">
+        <ul className="hidden xl:flex h-full flex-wrap items-center font-outfit justify-end gap-x-5 gap-y-2">
           {menuItems.map((item) => {
             const isActive =
               item.href === "/"

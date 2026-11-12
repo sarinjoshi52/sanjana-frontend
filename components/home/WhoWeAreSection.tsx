@@ -33,20 +33,42 @@ const cardItem = [
 
 export default function WhoWeAreSection() {
   return (
-    <div className="flex flex-col gap-2 py-20">
+    <section
+      data-aos="fade-up"
+      id="who-we-are-section"
+      className="flex flex-col py-15 gap-10"
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mid:grid-cols-4">
         {cardItem.map((card, index) => (
           <CustomCard
             className="h-full min-w-0 px-5 hover:border-primary transition-all duration-300"
             key={index}
           >
-            <CustomCardTitle className="text-xl">
+            <CustomCardTitle className="text-xl font-medium tracking-wide">
               {card.heading}
             </CustomCardTitle>
-            <CustomCardDescription>{card.description}</CustomCardDescription>
+            <CustomCardDescription className="font-outfit text-sm">
+              {card.description}
+            </CustomCardDescription>
           </CustomCard>
         ))}
       </div>
-    </div>
+
+      <div className="grid min-w-0 grid-cols-1 gap-6 rounded-xl bg-primary p-6 text-white sm:p-8 md:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] lg:gap-8 lg:p-12">
+        <h2 className="text-secondary! leading-12 items-start">
+          Sanjana <br /> Overview
+        </h2>
+        <article className="flex min-w-0 flex-col gap-5 font-outfit text-base sm:text-lg lg:text-xl">
+          <p>
+            SañJñāNā is a team of knowledge professionals committed to
+            strengthening institutions, advancing knowledge, and nurturing
+            leadership through crystallized, evidence-based services. We believe
+            transformative societal development begins by addressing
+            institutional inefficiencies, leadership gaps, and knowledge
+            limitations to unlock greater perspectives, power, and potential.
+          </p>
+        </article>
+      </div>
+    </section>
   );
 }

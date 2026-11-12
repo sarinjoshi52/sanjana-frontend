@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "lenis/dist/lenis.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -8,6 +9,7 @@
   --font-sans: var(--font-inter-source);
   --font-heading: var(--font-cal-sans-source);
   --font-outfit: var(--font-outfit-source);
+  --color-light-green: var(--light-green);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -50,6 +52,8 @@
 }
 
 :root {
+  --light-green: #34b17a;
+  --lightGreen: var(--light-green);
   --background: #f9fafc;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -127,7 +131,6 @@
   }
   html {
     @apply font-sans;
-    scroll-behavior: smooth;
   }
 }
 
@@ -135,6 +138,26 @@ h1 {
   font-family: var(--font-heading);
   font-weight: 400;
   font-size: 2.25rem;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 2.7rem;
+  color: var(--primary);
+  letter-spacing: 0.05rem;
+}
+
+@media (max-width: 1540px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 [data-inline-editable="true"] {
